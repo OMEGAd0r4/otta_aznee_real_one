@@ -12,7 +12,7 @@ const YouTube = require('simple-youtube-api');
 //PLUGINS
 
 //BOT TOKEN
-bot.login(process.env.BOT_TOKEN);
+bot.login(process.env.token);
 //BOT TOKEN
 
 //GETS THE BOT ONLINE
