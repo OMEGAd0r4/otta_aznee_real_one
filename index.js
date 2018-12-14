@@ -47,7 +47,7 @@ bot.on('message', async message => {
         bot.channels.get('508462044584869907').send({embed: new Discord.RichEmbed()
             .setDescription("SOMEONE GOT WARNED HAHAHAHA")
             .addField("WARN USER", message.author)
-            .addField("REASON AUTOMATICALLY WARNED", blacklisted)})
+            .addField("REASON AUTOMATICALLY WARNED", message.content)})
     }
 });
 //ANTI-SWEAR GUARDIAN
