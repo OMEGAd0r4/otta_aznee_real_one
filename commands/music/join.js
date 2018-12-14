@@ -48,20 +48,21 @@ class joinCommand extends commando.Command{
                 var server = servers[message.guild.id]
                 message.member.voiceChannel.join()
                     .then(connection =>{
-                        message.channel.send("Joining voice channel");
+                        message.channel.send("**Joining voice channel**");
                         server.queue.push(args);
                         Play(connection, message);
                     })
           .then(connection => { // Connection is an instance of VoiceConnection
-            message.reply('I have successfully connected to the channel!');
+            message.reply('**I have successfully connected to the channel!**');
           })
           .catch(console.log);
       } else {
-        message.reply('You need to join a voice channel first!');
+        message.reply('**You need to join a voice channel first!**');
       }
     }
 }
 
 module.exports = joinCommand;
+
 
 
