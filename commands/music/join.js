@@ -35,11 +35,9 @@ class joinCommand extends commando.Command{
     }
     async run(message, args)
     {
-        if (message.member.voiceChannel)
-        {
-            if(message.guild.voiceConnection)
-            {
-                if (!servers[message.guild.id])
+    if (message.member.voiceChannel) {
+        message.member.voiceChannel.join()
+        if (!servers[message.guild.id])
                 {
                     servers[message.guild.id] = {queue: []}
                 }
@@ -50,13 +48,15 @@ class joinCommand extends commando.Command{
                         server.queue.push(args);
                         Play(connection, message);
                     })
-            }
-        }
-        else
-        {
-            message.reply("Please join a voice channel!");
-        }
+          .then(connection => { // Connection is an instance of VoiceConnection
+            message.reply('I have successfully connected to the channel!');
+          })
+          .catch(console.log);
+      } else {
+        message.reply('You need to join a voice channel first!');
+      }
     }
 }
 
 module.exports = joinCommand;
+
