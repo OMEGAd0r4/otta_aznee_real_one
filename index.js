@@ -43,7 +43,7 @@ bot.on('message', async message => {
     //3 deletes and send message
       if (foundInText) {
         message.delete();
-        message.reply("The Alphabetical Guardian has caught you being inappropiate and have been warned!")
+        message.channel.send("The Alphabetical Guardian has caught you being inappropiate and have been warned!")
         bot.channels.get('508462044584869907').send({embed: new Discord.RichEmbed()
             .setDescription("SOMEONE GOT WARNED HAHAHAHA")
             .addField("WARN USER", message.author)
