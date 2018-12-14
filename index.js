@@ -11,7 +11,7 @@ const YouTube = require('simple-youtube-api');
 //PLUGINS
 
 //BOT TOKEN
-bot.login('NDkzMDI5MTAyOTM3MzA5MTk0.DofEyw._gVqfSpO7m2gmzKRe_sh82I6Tu4');
+bot.login(proccess.token.nv);
 //BOT TOKEN
 
 //GETS THE BOT ONLINE
