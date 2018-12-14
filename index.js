@@ -5,7 +5,6 @@ const prefix = "/";
 const bot = new commando.Client({
     commandPrefix: prefix
 });
-const config = require('./config.json')
 const ms = require('ms');
 const YTDL = require('ytdl-core')
 const YouTube = require('simple-youtube-api');
