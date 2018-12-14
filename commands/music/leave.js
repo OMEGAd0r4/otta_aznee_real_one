@@ -27,3 +27,5 @@ class leaveCommand extends commando.Command{
         }
     }
 }
+
+module.exports = leaveCommand;
