@@ -64,29 +64,26 @@ bot.on('guildMemberAdd', member => {
     member.guild.channels.get('508462044584869907').send(`Welcome ${guildMemberAdd} to the Alpha Netowrk!`).addRole(memberrole.id)
 });
 
-//UPTIME
-bot.on('message', message => {
-    if (message.content.startsWith(prefix + 'uptime'))
-    {
-        let days = Math.floor(uptimeuser.uptime / 86400000);
-        let hours = Math.floor(uptimeuser.uptime / 3600000) % 24;
-        let minutes = Math.floor(uptimeuser.uptime / 60000) % 60;
-        let seconds = Math.floor(uptimeuser.uptime / 1000) % 60;
 
-        var uptimeuser = message.guild.member(message.mentions.users.first());
-        var uptimeuserargs = message.content.slice(prefix.length).split(/ + /); //MAIN ARGS
 
-        if (!uptimeuser) return message.channel.send({embed: new Discord.RichEmbed()
-            .setDescription(":x: **Missing args**")
-            .setColor("#FF4040")
-            .addField("->", "/uptime [User]")});
 
-        message.channel.send({embed: new Discord.RichEmbed()
-        .setDescription("Uptime")
-        .setAuthor(message.author.tag)
-        .addField(`**__Uptime__**`, `${uptimeuser} has been online for ${days}**D** ${hours}**H** ${minutes}**M** ${seconds}**S**`)});
-    }
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
