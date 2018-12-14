@@ -25,6 +25,7 @@ bot.on('ready',function(){
 global.servers = {};
 
 //REGISTIES
+bot.registry.registerGroup('music', 'Music')
 bot.registry.registerGroup('moderations', 'Moderations');
 bot.registry.registerGroup('fun', 'Fun')
 bot.registry.registerCommandsIn(__dirname + "/commands");
