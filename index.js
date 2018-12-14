@@ -11,7 +11,7 @@ const YouTube = require('simple-youtube-api');
 //PLUGINS
 
 //BOT TOKEN
-bot.login(process.env.token);
+bot.login('NDkzMDI5MTAyOTM3MzA5MTk0.DofEyw._gVqfSpO7m2gmzKRe_sh82I6Tu4');
 //BOT TOKEN
 
 //GETS THE BOT ONLINE
@@ -21,13 +21,10 @@ bot.on('ready',function(){
 });
 //GETS THE BOT ONLINE
 
-//MUSIC BOT
-global.servers = {};
-
 //REGISTIES
-bot.registry.registerGroup('music', 'Music')
 bot.registry.registerGroup('moderations', 'Moderations');
 bot.registry.registerGroup('fun', 'Fun')
+bot.registry.registerGroup('music', 'Music')
 bot.registry.registerCommandsIn(__dirname + "/commands");
 bot.registry.registerDefaults();
 //REGISTIES
@@ -35,7 +32,7 @@ bot.registry.registerDefaults();
 //ANTI-SWEAR GUARDIAN
 bot.on('message', async message => {
     //blacklisted words
-    let blacklisted = ['penis', 'vagina', 'stfu', 'assault', 'arse', 'fuck', 'cunt', 'faggot', 'biatch', 'bitch', 'wank', 'gae', 'gay', 'retarded', 'pussy', 'homosexual', 'transgender', 'lesbian', 'nigge', 'nigga', 'nig', 'thot', 'twit', 'twat', 'shit', 'slut', 'hoe'] //words put , after the word
+    let blacklisted = [] //words put , after the word
   
     //2 looking for words
     let foundInText = false;
@@ -47,7 +44,7 @@ bot.on('message', async message => {
     //3 deletes and send message
       if (foundInText) {
         message.delete();
-        message.channel.send("The Alphabetical Guardian has caught you being inappropiate and have been warned!")
+        message.channel.send(`The Alphabetical Guardian has caught ${message.author} being inappropiate and have been warned!`)
         bot.channels.get('508462044584869907').send({embed: new Discord.RichEmbed()
             .setDescription("SOMEONE GOT WARNED HAHAHAHA")
             .addField("WARN USER", message.author)
@@ -56,6 +53,9 @@ bot.on('message', async message => {
 });
 //ANTI-SWEAR GUARDIAN
 
+//YT STUFF
+global.servers = {};
+
 //WELCOME MESSAGE
 bot.on('guildMemberAdd', member => {
 
@@ -63,16 +63,15 @@ bot.on('guildMemberAdd', member => {
 
     member.guild.channels.get('508462044584869907').send(`Welcome ${guildMemberAdd} to the Alpha Netowrk!`).addRole(memberrole.id)
 });
-//WELCOME MESSAGE
 
 //UPTIME
 bot.on('message', message => {
     if (message.content.startsWith(prefix + 'uptime'))
     {
-        let days = Math.floor(bot.uptime / 86400000);
-        let hours = Math.floor(bot.uptime / 3600000) % 24;
-        let minutes = Math.floor(bot.uptime / 60000) % 60;
-        let seconds = Math.floor(bot.uptime / 1000) % 60;
+        let days = Math.floor(uptimeuser.uptime / 86400000);
+        let hours = Math.floor(uptimeuser.uptime / 3600000) % 24;
+        let minutes = Math.floor(uptimeuser.uptime / 60000) % 60;
+        let seconds = Math.floor(uptimeuser.uptime / 1000) % 60;
 
         var uptimeuser = message.guild.member(message.mentions.users.first());
         var uptimeuserargs = message.content.slice(prefix.length).split(/ + /); //MAIN ARGS
@@ -88,3 +87,23 @@ bot.on('message', message => {
         .addField(`**__Uptime__**`, `${uptimeuser} has been online for ${days}**D** ${hours}**H** ${minutes}**M** ${seconds}**S**`)});
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
