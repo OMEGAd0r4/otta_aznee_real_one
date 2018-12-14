@@ -21,6 +21,9 @@ bot.on('ready',function(){
 });
 //GETS THE BOT ONLINE
 
+//MUSIC BOT
+global.servers = {};
+
 //REGISTIES
 bot.registry.registerGroup('moderations', 'Moderations');
 bot.registry.registerGroup('fun', 'Fun')
@@ -59,6 +62,7 @@ bot.on('guildMemberAdd', member => {
 
     member.guild.channels.get('508462044584869907').send(`Welcome ${guildMemberAdd} to the Alpha Netowrk!`).addRole(memberrole.id)
 });
+//WELCOME MESSAGE
 
 //UPTIME
 bot.on('message', message => {
