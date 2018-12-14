@@ -59,4 +59,4 @@ class joinCommand extends commando.Command{
     }
 }
 
-module.exports = leaveCommand;﻿
+module.exports = joinCommand;
