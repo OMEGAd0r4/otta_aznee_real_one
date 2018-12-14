@@ -35,6 +35,10 @@ class joinCommand extends commando.Command{
     }
     async run(message, args)
     {
+    if (!args) message.channel.send({embed: new Discord.RichEmbed()
+        .setDescription(":x: **Missing args**")
+        .setColor("#FF4040")
+        .addField("->", "/join [YT Link]")});
     if (message.member.voiceChannel) {
         message.member.voiceChannel.join()
         if (!servers[message.guild.id])
@@ -59,4 +63,5 @@ class joinCommand extends commando.Command{
 }
 
 module.exports = joinCommand;
+
 
