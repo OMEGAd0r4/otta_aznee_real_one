@@ -10,9 +10,9 @@ const YTDL = require('ytdl-core');
 function Play(connection, message)
 {
     var server = servers[message.guild.id];
-    server.dipatcher = connection.playStream(YTDL(`${server.queue[0]}`, {filter: "audioonly"}));
+    server.dispatcher = connection.playStream(YTDL(`${server.queue[0]}`, {filter: "audioonly"}));
     server.queue.shift();
-    server.dipatcher.on("end", function(){
+    server.dispatcher.on("end", function(){
         if (server.queue[0])
         {
             Play (connection, message);
@@ -63,6 +63,7 @@ class joinCommand extends commando.Command{
 }
 
 module.exports = joinCommand;
+
 
 
 
