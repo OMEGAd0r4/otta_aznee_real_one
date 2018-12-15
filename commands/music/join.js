@@ -35,6 +35,8 @@ class joinCommand extends commando.Command{
     }
     async run(message, args)
     {
+    if (message.guild.me.voiceChannel) return message.channel.send("**Sorry, I am currently in a voice channel!**");
+
     if (!args) message.channel.send({embed: new Discord.RichEmbed()
         .setDescription(":x: **Missing args**")
         .setColor("#FF4040")
@@ -63,6 +65,7 @@ class joinCommand extends commando.Command{
 }
 
 module.exports = joinCommand;
+
 
 
 
