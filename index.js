@@ -16,9 +16,21 @@ bot.login(process.env.token);
 
 //GETS THE BOT ONLINE
 bot.on('ready',function(){
-    console.log("Bot is now online!, residing on " + bot.guilds.size + " Servers");
-    bot.user.setActivity("/help | residing on " + bot.guilds.size + " Servers", { type: 'PLAYING' });
+    console.log(`Bot is now online!, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
+    bot.user.setActivity(`/help | Helping ${bot.users.size} users, in ${bot.guilds.size} servers`, { type: 'PLAYING' });
 });
+
+bot.on("guildCreate", guild => {
+    // This event triggers when the bot joins a guild.
+    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    bot.user.setActivity(`/help | Helping ${bot.users.size} users, in ${bot.guilds.size} servers`, { type: 'PLAYING' });
+});
+
+bot.on("guildDelete", guild => {
+    // this event triggers when the bot is removed from a guild.
+    console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
+    bot.user.setActivity(`/help | Helping ${bot.users.size} users, in ${bot.guilds.size} servers`, { type: 'PLAYING' });
+  });
 //GETS THE BOT ONLINE
 
 //REGISTIES
@@ -63,6 +75,33 @@ bot.on('guildMemberAdd', member => {
 
     member.guild.channels.get('508462044584869907').send(`Welcome ${guildMemberAdd} to the Alpha Netowrk!`).addRole(memberrole.id)
 });
+//WELCOME MESSAGE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
