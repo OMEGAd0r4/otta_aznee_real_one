@@ -68,14 +68,7 @@ bot.on('message', async message => {
 //YT STUFF
 global.servers = {};
 
-//WELCOME MESSAGE
-bot.on('guildMemberAdd', member => {
 
-    var memberrole = message.guild.roles.find(`name`, "Member");
-
-    member.guild.channels.get('508462044584869907').send(`Welcome ${guildMemberAdd} to the Alpha Netowrk!`).addRole(memberrole.id)
-});
-//WELCOME MESSAGE
 
 
 
