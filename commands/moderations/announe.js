@@ -21,7 +21,7 @@ class announceCommand extends commando.Command {
     let announcementargs = message.content.slice(prefix.length).split(/ + /); //MAIN ARGS
     let announcementmessage = announcementargs.join(" ").slice(9);
 
-    let announcementschannel = message.guild.channels.find(`name`, "announcements");
+    let announcementschannel = message.guild.channels.find(`name`, "📌announcements");
     if(!announcementschannel) return message.channel.send("Couldn't find the announcements channel");
     var supportteamrole = message.guild.roles.find(`name`, "SUPPORT TEAM");
     if (!message.member.roles.has(supportteamrole.id)) return message.channel.send("Insufficient permission. You do not have permission to announce messages")
