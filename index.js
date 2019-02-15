@@ -59,7 +59,6 @@ bot.on('message', async message => {
         message.channel.send(``Slender man has caught ${message.author} cussing and has been kidnapped.``)
         bot.channels.get('508462044584869907').send({embed: new Discord.RichEmbed()
             .setTitle("**Slender [] Chat Filter**")
-            .setColor("#db5e5e")
             .addField("Message author", message.author)
             .addField("Text sent", message.content)})
     }
