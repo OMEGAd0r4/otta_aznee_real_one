@@ -17,7 +17,7 @@ bot.login(process.env.token);
 //GETS THE BOT ONLINE
 bot.on('ready',function(){
     console.log(`Bot is now online!, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
-    bot.user.setActivity(`/help | Helping ${bot.users.size} users, in ${bot.guilds.size} servers`, { type: 'PLAYING' });
+    bot.user.setActivity(`/help | Slender Man`, { type: 'PLAYING' });
 });
 
 bot.on("guildCreate", guild => {
