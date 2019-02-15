@@ -44,7 +44,7 @@ bot.registry.registerDefaults();
 //ANTI-SWEAR GUARDIAN
 bot.on('message', async message => {
     //blacklisted words
-    let blacklisted = [" asshole", "fuck", "nigger", "faggot", "retard", " ass ", "whore", "slut", "pussy", "nigga"] //words put , after the word
+    let blacklisted = ["asshole", "fuck", "nigger", "faggot", "retard", " ass ", "whore", "slut", "pussy", "nigga", "shit"] //words put , after the word
   
     //2 looking for words
     let foundInText = false;
@@ -56,11 +56,11 @@ bot.on('message', async message => {
     //3 deletes and send message
       if (foundInText) {
         message.delete();
-        message.channel.send(`The Alphabetical Guardian has caught ${message.author} being inappropiate and have been warned!`)
+        message.channel.send(`Slender man has caught ${message.author} cussing and has been kidnapped.`)
         bot.channels.get('508462044584869907').send({embed: new Discord.RichEmbed()
-            .setDescription("SOMEONE GOT WARNED HAHAHAHA")
-            .addField("WARN USER", message.author)
-            .addField("REASON AUTOMATICALLY WARNED", message.content)})
+            .setTitlen("**Slender [] Chat Filter**")
+            .addField("Message author", message.author)
+            .addField("Text sent", message.content)})
     }
 });
 //ANTI-SWEAR GUARDIAN
