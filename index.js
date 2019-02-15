@@ -44,7 +44,7 @@ bot.registry.registerDefaults();
 //ANTI-SWEAR GUARDIAN
 bot.on('message', async message => {
     //blacklisted words
-    let blacklisted = [" asshole", "fuck", " nigger ", "faggot", "retard", " ass ", "whore", "slut", "pussy", "nigga"] //words put , after the word
+    let blacklisted = [" asshole", "fuck", "nigger ", "faggot", "retard", " ass ", "whore", "slut", "pussy", "nigga"] //words put , after the word
   
     //2 looking for words
     let foundInText = false;
