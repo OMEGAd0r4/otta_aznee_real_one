@@ -56,7 +56,7 @@ bot.on('message', async message => {
     //3 deletes and send message
       if (foundInText) {
         message.delete();
-        message.channel.send(`Slender man has caught ${message.author} cussing and has been kidnapped.`)
+        message.channel.send("``Slender man has caught ${message.author} cussing and has been kidnapped.``")
         bot.channels.get('508462044584869907').send({embed: new Discord.RichEmbed()
             .setTitle("**Slender [] Chat Filter**")
             .addField("Message author", message.author)
